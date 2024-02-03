@@ -42,7 +42,7 @@ app.put("*", upload.single("image"), async (req, res) => {
   let filepath = req.file.path;
 
   const data = await s3
-    .upload({
+    .putObject({
       Body: fs.createReadStream(filepath),
       Bucket: process.env.BUCKET,
       Key: filename,
