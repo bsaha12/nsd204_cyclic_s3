@@ -5,6 +5,7 @@ const fs = require("fs");
 require("dotenv").config();
 
 const app = express();
+const s3 = new aws.S3();
 
 app.use(express.json());
 
