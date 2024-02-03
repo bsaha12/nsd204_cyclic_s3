@@ -36,9 +36,9 @@ app.get("*", async (req, res) => {
   }
 });
 
-//put the file in cloud
+//put the file in clou
 app.put("*", upload.single("image"), async (req, res) => {
-  let filename = req.file;
+  let filename = req.file.originalname;
   let filepath = req.file.path;
 
   const data = await s3
